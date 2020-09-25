@@ -53,6 +53,7 @@ data_unique <- extract_unique_references(data, title_match)
 # Screen references ----
 result <- screen_topics(data_unique)
 
+setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption/Causes_corruption_Version_Control")
 
 
 write_bibliography(data_unique, "Outputs/Unique_Causes_Corruption", format = "ris") 
