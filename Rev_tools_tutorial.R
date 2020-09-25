@@ -1,16 +1,16 @@
 #Learning REVtools -----
-setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption/")
+setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption/Download_references")
 
 
 #source = https://revtools.net/assets/docs/Westgate_revtools_bioRxiv_v2.pdf
 library("revtools")
 
-# 1) first try with causes of corruption in scopus---
+# 1) first try with causes of corruption in and Web of Sciences---
 # search terms: TITLE ( corrupt*  AND  cause* )
 # download as ris
 
 #1. import references----
-data_list <- read_bibliography("Download_references/scopus_causes_corruption.ris")#automatically links
+data_list <- read_bibliography(list.files())#automatically links
 
 head(data_list)
 names(data_list)
@@ -42,7 +42,7 @@ title_match <- find_duplicates(data,
                     threshold = 5 )
 
 
-length(unique(title_match)) # n = 103 - 1.91% duplicates
+length(unique(title_match)) # n = 150 of 209 - 39% duplicates
 data_unique <- extract_unique_references(data, title_match)
 
 # this method found 2 duplicates, 
@@ -51,6 +51,9 @@ data_unique <- extract_unique_references(data, title_match)
 # Screen references ----
 result <- screen_topics(data_unique)
 
-write_bibliography(data_unique, "Unique_Scopus_Corruption", format = "ris") 
-write.csv(data_unique, "Unique_Scopus_Corruption.csv")
+
+setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption/Outputs")
+
+write_bibliography(data_unique, "Unique_Causes_Corruption", format = "ris") 
+write.csv(data_unique, "Unique_Causes_Corruption.csv")
 
