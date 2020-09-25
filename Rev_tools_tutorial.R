@@ -1,5 +1,7 @@
 #Learning REVtools -----
-hi
+setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption/")
+
+
 #source = https://revtools.net/assets/docs/Westgate_revtools_bioRxiv_v2.pdf
 library("revtools")
 
