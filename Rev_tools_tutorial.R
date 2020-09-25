@@ -1,5 +1,5 @@
 #Learning REVtools -----
-setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption/Download_references")
+setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption")
 
 
 #source = https://revtools.net/assets/docs/Westgate_revtools_bioRxiv_v2.pdf
@@ -10,7 +10,10 @@ library("revtools")
 # download as ris
 
 #1. import references----
+setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption/Download_references")
+
 data_list <- read_bibliography(list.files())#automatically links
+setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption")
 
 head(data_list)
 names(data_list)
@@ -52,8 +55,7 @@ data_unique <- extract_unique_references(data, title_match)
 result <- screen_topics(data_unique)
 
 
-setwd("/Users/anacristinaeguigurenburneo/Google Drive/Sperm Whale culture/PhD/Classes/Cultural_Evolution/Project_Corruption/Causes_Corruption/Outputs")
 
-write_bibliography(data_unique, "Unique_Causes_Corruption", format = "ris") 
-write.csv(data_unique, "Unique_Causes_Corruption.csv")
+write_bibliography(data_unique, "Outputs/Unique_Causes_Corruption", format = "ris") 
+write.csv(data_unique, "Outputs/Unique_Causes_Corruption.csv")
 
