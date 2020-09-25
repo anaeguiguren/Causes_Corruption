@@ -48,3 +48,6 @@ data_unique <- extract_unique_references(data, title_match)
 # Screen references ----
 result <- screen_topics(data_unique)
 
+write_bibliography(data_unique, "Unique_Scopus_Corruption", format = "ris") 
+write.csv(data_unique, "Unique_Scopus_Corruption.csv")
+
